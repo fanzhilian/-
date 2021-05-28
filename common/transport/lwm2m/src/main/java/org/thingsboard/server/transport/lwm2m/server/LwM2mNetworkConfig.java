@@ -23,7 +23,7 @@ public class LwM2mNetworkConfig {
         NetworkConfig coapConfig = new NetworkConfig();
         coapConfig.setInt(NetworkConfig.Keys.COAP_PORT,serverPortNoSec);
         coapConfig.setInt(NetworkConfig.Keys.COAP_SECURE_PORT,serverSecurePort);
-        /*
+        /**
           Example:Property for large packet:
           #NetworkConfig config = new NetworkConfig();
           #config.setInt(NetworkConfig.Keys.MAX_MESSAGE_SIZE,32);
@@ -33,7 +33,7 @@ public class LwM2mNetworkConfig {
           #config.setInt(NetworkConfig.Keys.MAX_TRANSMIT_WAIT,120000);
          */
 
-        /*
+        /**
           Property to indicate if the response should always include the Block2 option \
           when client request early blockwise negociation but the response can be sent on one packet.
           - value of false indicate that the server will respond without block2 option if no further blocks are required.
@@ -42,7 +42,7 @@ public class LwM2mNetworkConfig {
             or adapt the block size when receiving a 4.13 Entity too large response code
          */
         coapConfig.setBoolean(NetworkConfig.Keys.BLOCKWISE_STRICT_BLOCK2_OPTION, true);
-        /*
+        /**
          Property to indicate if the response should always include the Block2 option \
          when client request early blockwise negociation but the response can be sent on one packet.
          - value of false indicate that the server will respond without block2 option if no further blocks are required.
@@ -51,7 +51,7 @@ public class LwM2mNetworkConfig {
         coapConfig.setBoolean(NetworkConfig.Keys.BLOCKWISE_ENTITY_TOO_LARGE_AUTO_FAILOVER, true);
 
         coapConfig.setInt(NetworkConfig.Keys.BLOCKWISE_STATUS_LIFETIME, 300000);
-        /*
+        /**
           !!! REQUEST_ENTITY_TOO_LARGE CODE=4.13
           The maximum size of a resource body (in bytes) that will be accepted
           as the payload of a POST/PUT or the response to a GET request in a
@@ -66,7 +66,7 @@ public class LwM2mNetworkConfig {
           A value of {@code 0} turns off transparent handling of blockwise transfers altogether.
          */
         coapConfig.setInt(NetworkConfig.Keys.MAX_RESOURCE_BODY_SIZE, 256 * 1024 * 1024);
-        /*
+        /**
           The default DTLS response matcher.
           Supported values are STRICT, RELAXED, or PRINCIPAL.
           The default value is STRICT.
@@ -77,13 +77,13 @@ public class LwM2mNetworkConfig {
           - false, without
          */
         coapConfig.setString(NetworkConfig.Keys.RESPONSE_MATCHING, "STRICT");
-        /*
+        /**
           https://tools.ietf.org/html/rfc7959#section-2.9.3
           The block size (number of bytes) to use when doing a blockwise transfer. \
           This value serves as the upper limit for block size in blockwise transfers
          */
         coapConfig.setInt(NetworkConfig.Keys.PREFERRED_BLOCK_SIZE, 1024);
-        /*
+        /**
           The maximum payload size (in bytes) that can be transferred in a
            single message, i.e. without requiring a blockwise transfer.
           NB: this value MUST be adapted to the maximum message size supported by the transport layer.
